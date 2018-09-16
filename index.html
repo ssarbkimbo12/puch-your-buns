@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+ 	<meta charset="utf-8">
+<head>
+	<title>punch your buns</title>
+	<style>
+		#wrap{width:1400px; margin:auto; position: relative; text-align: center; padding:10px;}
+		#finnimg{margin:auto; margin-top: 200px; width: 400px;}
+		#bigfinn{width:200px; position: absolute; left:66px; top:510px;}
+		#jake{width:200px; position: absolute; right:290px; top:550px;}
+		#lemon{width:150px; position: absolute;  left:320px;top:460px;}
+		#back{width:1300px; position: absolute; margin:auto; z-index: -9999; left:calc(50% - 650px);}
+
+
+	</style>
+</head>
+<body>
+
+	<div id="wrap">
+	<img src="finnimg.jpg" id="finnimg">
+	<img src="bigfinn.gif" id="bigfinn">
+	<img src="jake.gif" id="jake">
+	<img src="lemon.gif" id="lemon">
+	<img src="background.gif" id="back">
+
+	<audio id="music">
+ 		<source src="music.mp3" type="audio/mpeg">
+	</audio>
+
+   </div>
+
+	
+	<script type="text/javascript">
+		
+		document.getElementById("bigfinn").style.visibility = "hidden";
+		document.getElementById("jake").style.visibility = "hidden";
+		document.getElementById("lemon").style.visibility = "hidden";
+		document.getElementById("back").style.visibility = "hidden";
+		
+		var toggle = "off";
+
+		finnimg.onclick = function(){ 
+			if(toggle == "off"){
+				finnimg.setAttribute("src","finn.gif");
+					toggle = "on";
+					music.play();
+
+					document.getElementById("bigfinn").style.visibility = "visible";
+					document.getElementById("jake").style.visibility = "visible";
+					document.getElementById("lemon").style.visibility = "visible";		
+					document.getElementById("back").style.visibility = "visible";		
+					}
+					else{
+				finnimg.setAttribute("src","finnimg.jpg");
+					toggle="off";
+					music.pause();
+
+				document.getElementById("bigfinn").style.visibility = "hidden";
+				document.getElementById("jake").style.visibility = "hidden";
+				document.getElementById("lemon").style.visibility = "hidden";
+
+				document.getElementById("back").style.visibility = "hidden";
+				}
+			}
+
+	</script>
+</body>
+</html>
